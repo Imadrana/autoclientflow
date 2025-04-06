@@ -1,5 +1,5 @@
 import './globals.css';
-import MainLayout from '../components/layout/MainLayout';
+import { AuthProvider } from '../contexts/AuthContext';
 
 export const metadata = {
   title: 'AutoClientFlow CRM',
@@ -10,7 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
